@@ -6,4 +6,6 @@ window.onload = function(){
   updateUI();
   setCurrency();
   setPlayerCurrency();
+	console.log(game.activities);
+	initializeActivityToolTips(game.activities);
 };

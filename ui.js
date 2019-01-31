@@ -67,3 +67,30 @@ function uiLevelUpSkill(name){
   }
 
 }
+
+function setActivityToolTip(activity){
+	//making the tooltips
+	var infoId = activity.id.concat("information");
+	console.log(infoId);
+	var displayText = activity.flavorText.concat("<br />Affected Skills (+XP): <br />");
+	console.log(activity.affectedSkills.length);
+	console.log(displayText);
+	//affected skills
+	console.log(displayText);
+	for (var j=0; j<activity.affectedSkills.length;j++){
+		displayText = displayText.concat(activity.affectedSkills[j], " (+", activity.affectedSkillsBaseXP[j], ")<br />");
+	}
+	//now to add rewards
+	displayText = displayText.concat("Rewards (+ base amount):<br />");
+	for(var j=0; j<activity.rewards.length;j++){
+		displayText = displayText.concat(activity.rewards[j], " (+",activity.rewardsBaseValues[j],")<br />");
+	}
+	//now to set the tooltip
+	$('#' + infoId).attr("title", displayText);
+}
+
+function initializeActivityToolTips(activityList){
+	for(var i=0; i<activityList.length;i++){
+		setActivityToolTip(activityList[i]);
+	}
+}

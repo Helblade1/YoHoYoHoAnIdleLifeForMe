@@ -23,7 +23,7 @@ function Player(){
   this.resources = [];
 
 	//skills
-	this.pillage = new PlayerSkill('pillage',0,0,0,100,true,3,false,0);
+	this.pillage = new PlayerSkill('pillage',1,1,0,100,true,3,false,0);
 }
 
 function matchNameToSkill(player, iD){
@@ -48,7 +48,7 @@ function levelUp(name){
     game.player[name].currentXP = 0;
     if(game.player[name].usesMult && !game.player[name].usesPow){
       //the formula for multiplicative leveling
-      game.player[name].reqXP = game.player[name].baseXP * Math.pow(game.player[name].xPMultScaling,game.player[name].level);
+      game.player[name].reqXP = game.player[name].baseXP * Math.pow(game.player[name].xPMultScaling,game.player[name].level - 1);
       uiLevelUpSkill(name);
     }
     else if (game.player[name].usesPow && !game.player[name].usesMult){
