@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="css/aboutyou.css">
+<link rel="stylesheet" type="text/css" href="css/resourcestable.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+</head>
+
+<body>
+	<div id='GameEra'><span id='CurrentGameEra'> </span></div>
+	<br />
+  <nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="about-you-tab" data-toggle="tab" href="#about-you" role="tab" aria-controls="nav-home" aria-selected="true">About You <span class="badge badge-success" id='leveluptabbadge'></span></a>
+      <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Activities</a>
+      <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+  </div>
+  </nav>
+
+<!-- This is on every Tab -->
+  <div>
+    <table id="ResourcesTable">
+      <tr>
+        <th>Resource</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td><span id="Resource0Name"></span></td>
+        <td><span id="Resource0Amount"></span></td>
+      </tr>
+      <tr>
+        <td><span id="Resource1Name"></span></td>
+        <td><span id="Resource1Amount"></span></td>
+      </tr>
+      <tr>
+        <td><span id="Resource2Name"></span></td>
+        <td><span id="Resource2Amount"></span></td>
+      </tr>
+    </table>
+  </div>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="about-you" role="tabpanel" aria-labelledby="about-you-tab">
+      <span id="AboutYou" class="tabcontent">
+        <table id="AboutYouTable" align="left">
+          <tr>
+            <th>Skill</th>
+            <th>Level</th>
+            <th>XP</th>
+            <th>XP/s</th>
+            <th>XP to Level Up</th>
+          </tr>
+          <tr>
+            <!-- Pillage stuff -->
+            <td><span class="VisibleSkillName" id="Pillage">Pillage</span><span class="badge badge-pill badge-primary levelupbadge" id='pillagebadge'></span></td>
+            <td><span class="PillageInfo" id="PillageLevel">0</span></td>
+            <td><span class="PillageInfo" id="PillageXP">0</span></td>
+            <td><span class="PillageInfo" id="PillageXPperSec">0</span></td>
+            <td><span class="PillageInfo" id="PillageXPToLevelUp">0</span></td>
+          </tr>
+        </table>
+ 	    </span>
+    </div>
+    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <span id="activities" class="tabcontent" align='left'>
+        <table id='ActivityTable'>
+          <tr>
+            <th>Activity</th>
+            <th>Multitasked</th>
+          </tr>
+          <tr>
+            <td><button id='PillageButton' type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top" onClick="performActivity('pillage')">Street Thievery</button></td>
+          </tr>
+        </table>
+	    </span>
+    </div>
+    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+  </div>
+
+
+
+<!--
+	    <span id="People" class="tabcontent">
+		    <h2>Wise Men</h2>
+		     <p>The wise men have new ideas for you, but they come at a price</p>
+	    </span>
+      <span id="Settings" class="tabcontent">
+      </span>
+  </div> -->
+	<script type="text/javascript" src="era.js"></script>
+	<script type="text/javascript" src="player.js"></script>
+  <script type="text/javascript" src ="activity.js"></script>
+  <script type="text/javascript" src="activities.js"></script>
+	<script type="text/javascript" src="game.js"></script>
+  <script type="text/javascript" src="ui.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+  <!-- <script type="text/javascript">
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script> -->
+</body>
+</html>

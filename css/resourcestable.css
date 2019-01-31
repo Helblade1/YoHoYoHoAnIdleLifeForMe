@@ -1,0 +1,12 @@
+#ResourcesTable {
+  border: solid thin;
+  border-collapse: collapse;
+  float: right;
+  width: 25%;
+}
+
+#ResourcesTable th, #ResourcesTable td{
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width:20%;
+}

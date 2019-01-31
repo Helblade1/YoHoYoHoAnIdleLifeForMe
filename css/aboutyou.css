@@ -1,0 +1,17 @@
+#AboutYouTable {
+  border: solid thin;
+  border-collapse: collapse;
+  float: left;
+  width: 75%;
+}
+#AboutYouTable th, #AboutYouTable td{
+  border: 1px solid #999;
+  padding: 0.5rem;
+  width:20%;
+}
+#AboutYouTable td{
+  text-align: right;
+}
+#AboutYouTable td:nth-child(5n+1){
+  text-align: center;
+}
